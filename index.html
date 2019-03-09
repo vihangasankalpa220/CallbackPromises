@@ -1,0 +1,53 @@
+
+    function main(callback) {
+      setTimeout(function () {
+        const value=1000;
+        callback(value);
+      },5000)
+
+    }
+    const calcfunc=function (amount) {
+      console.log(amount*20/100);
+    }
+
+     main(calcfunc);
+
+
+    //callback
+
+
+
+    function main(callback) {
+      setTimeout(function () {
+        const value=1000;
+        callback(value);
+      },5000);
+    }
+
+main(function (amount) {
+  console.log(amount*20/100);
+});
+
+
+    main(function (value) {
+      console.log(value*20/100);
+    })
+
+
+    //promises
+
+
+    function main(callback) {
+      return new Promise(function (resolve,reject) {
+        setTimeout(function () {
+          const value=1000;
+          resolve(value)
+
+        },1000);
+      });
+    }
+    const promise=main();
+    promise.then(function (amount) {
+      console.log(amount*20/100);
+    })
+main();
